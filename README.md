@@ -1,6 +1,9 @@
 # SAS-On-Demand-for-Academics-Port-Checker
 Checks the ports of the hostnames used by SAS OnDemand for Academics to see if any of the ports are being blocked. Can be used to check for connection issues, and is helpful for users to troubleshoot issues without needing to contact technical support.
 
+Windows/MacOS Users can download an executable GUI program by opening either the Windows/MacOS folders of this repository and downloading the PortChecker.exe or PortChecker_MAC files on to their computers.
+
+# How the program works
 Hostnames are initialized in the the self.states dictionary at the beginning of the program. These are the hostnames which we will check to see if they are open/closed.
 
 The hostnames in the self.states dictionary depend on the selections made by the user.
