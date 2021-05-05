@@ -1,24 +1,29 @@
-# SAS-On-Demand-for-Academics-Port-Checker
-Checks the ports of the hostnames used by SAS OnDemand for Academics to see if any of the ports are being blocked. Can be used to check for connection issues, and is helpful for users to troubleshoot issues without needing to contact technical support.
+# SAS OnDemand for Academics Port Checker
 
-Windows/MacOS Users can download an executable GUI program by opening either the Windows/MacOS folders of this repository and downloading the PortChecker.exe or PortChecker_MAC files on to their computers.
+Program that checks for blocked network ports associated with the hostnames used by [SAS OnDemand for Academics](https://welcome.oda.sas.com/).
+The program checks different combinations of ports/hostnames depending on which SAS OnDemand for Academics software the user is using, and which region the user is in (US, EU, AP). 
 
-# How the program works
-Hostnames are initialized in the the self.states dictionary at the beginning of the program. These are the hostnames which we will check to see if they are open/closed.
+This program uses a Graphical User Interface (GUI) to obtain user input, and display the resulting output. 
+The resulting output can then be saved as a text file to their Desktop, which the user can send to SAS Technical Support for further assitance if necessary. 
 
-The hostnames in the self.states dictionary depend on the selections made by the user.
-  - The change_window() function decides whether or not they are using JMP/EG (User must choose Yes/No).
-    - If they choose Yes, the program will include the Tier 2 hostnames of the corresponding region. 
-    - If they choose No, the program will NOT include the Tier 2 hostnames of the corresponding region. 
-      - If the user chose Yes, the region_select_using_EG() function decides which region they are in (User must choose US, EU, AP).
-      - If the user chose No, the region_select_not_using_EG() function decides which region they are in (User must choose US, EU, AP).
+# How to Use the Program
+Windows: In the Windows Folder of this repository, download the **PortChecker.exe** file to run the executable program.
+- Your Anti-Virus software may quarantine this file as it is an unsigned executable. 
+    - Bypass your Anti-Virus software and allow your computer to run the PortChecker.exe file. 
+- If you have Python 3 installed, you can also download the source code file (PortChecker.py) and run the program using your Python interpreter. 
 
-- From there, the program skips ahead to one of the following functions: 
-  - us_using_EG()
-  - eu_using_EG()
-  - ap_using_EG()
-  - us_not_using_EG()
-  - eu_not_using_EG()
-  - ap_not_using_EG() 
+MacOS: in the MacOS Folder of this repository, download the **PortChecker** file (no filename extension) to run the executable program.
+- MacOS may not allow this file to run as it is from an unidentified developer. 
+    - See the following link if you experience the problem above: [How to open programs from Unidentified Developers on MacOS](https://www.macworld.co.uk/how-to/mac-software/mac-app-unidentified-developer-3669596/).
+- If you have Python 3 installed, you can also download the source code file (PortChecker.py) and run the program using your Python interpreter. 
+ 
 
-- Finally, the program skips to the output_window() function to display the results. The user can choose to save the results as a text file to their desktop if they would like to. They can share the text file of the results with technical support.
+# Program Details:
+- Written in Python 3.6.5. Packages used:
+    - tkinter 
+    - base64
+    - socket
+    - os
+    - webbrowser
+
+- Self-Extracting Executables for Windows and MacOS were created using [PyInstaller](https://pypi.org/project/PyInstaller/). 
