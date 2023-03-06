@@ -21,3 +21,9 @@ Windows: In the Windows Folder of this repository, download the **PortChecker.ex
     - webbrowser
 
 - Self-Extracting Executables for Windows was created using [PyInstaller](https://pypi.org/project/PyInstaller/). 
+
+### Notes for future reference
+Command I ran to generate the executable:
+```
+pyinstaller.exe --onefile --noconsole PortChecker.py
+```
