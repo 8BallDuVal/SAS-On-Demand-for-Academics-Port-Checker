@@ -119,7 +119,7 @@ class ODAPortChecker:
             - If they choose Yes, the program will include the Tier 2 hostnames of the corresponding region. 
             - If they choose No, the program will NOT include the Tier 2 hostnames of the corresponding region. 
         """
-        self.welcome_label.config(text = 'Are you having issues using SAS OnDemand for Academics: Enterprise Guide,\n or SAS OnDemand for Academics: JMP?')    
+        self.welcome_label.config(text = 'Are you having issues using SAS OnDemand for Academics applications?')    
         self.yes_button = Button(self.bottom_frame, text="Yes", width=10, height=2, command=self.region_select_using_EG)
         self.yes_button.grid(row=1, column=3, sticky=E)
 
